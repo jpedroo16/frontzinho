@@ -1,35 +1,25 @@
-import { StyleSheet } from "react-native"
+import { StyleSheet } from "react-native";
 
 export const footerestilo = StyleSheet.create({
-
-    root:{
-        height: '100%',
-        width: '100%',
-        fontFamily: 'Kollektif',
-        justifyContent: 'flex-end',
-        flexDirection: 'column',
-        
-    },
     footer: {
         backgroundColor: '#38b6ff',
-        height: '37%',
-        justifyContent:'center',
-        alignItems:'center',  
-        padding:20
+        paddingVertical: 30,
+        paddingHorizontal: 20,
+        alignItems: 'center',
     },
-
+    section: {
+        marginBottom: 20,
+        width: '100%',
+    },
     titulo: {
-        fontSize: 30,
-        fontWeight: 'bold',   
-    },
-    subtitulo:{
-        fontSize: 20,
-        fontWeight: 'bold'
+        fontSize: 24,
+        fontWeight: 'bold',
+        marginBottom: 10,
+        color: '#fff',
     },
     textosuporte: {
-        fontSize: 20,
-        width: 370,
-       
+        fontSize: 16,
+        color: '#fff',
+        marginBottom: 10,
     },
-   
-})
+});

@@ -1,131 +1,71 @@
-import React, { useState } from 'react';
-import { View, Text, Pressable, Button, ScrollView } from 'react-native'; // Importe os componentes necessários
-import CustomModal from '../../components/Modais'; // Importe o componente de modal genérico
-import { ModalContent1,ModalContent10,ModalContent11,ModalContent12,ModalContent2,ModalContent3, ModalContent4, ModalContent5, ModalContent6, ModalContent7, ModalContent8, ModalContent9 } from '../../components/ModalContent'; // Importe os conteúdos dos modais
-import { enemstyle } from './style'; // Importe o estilo
+import React from 'react';
+import { View, Text, FlatList, TouchableOpacity, TextInput, SafeAreaView } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialIcons'; // Certifique-se que está instalado
+import { styles } from './style';
 
-import Cabecalho from '../../components/header';
+const years = [
+  { year: '2023' },
+  { year: '2022' },
+  { year: '2021' },
+  { year: '2020' },
+  { year: '2019' },
+  { year: '2018' },
+  { year: '2017' },
+  { year: '2016' },
+  { year: '2015' },
+  { year: '2014' },
+  { year: '2013' },
+  { year: '2012' },
+];
 
-import * as Font from 'expo-font';
-import { useEffect } from 'react';
-import KollektifBold from '../../assets/fonts/Kollektif-Bold.ttf';
-import Kollektif from '../../assets/fonts/Kollektif.ttf';
-import { Botoes } from '../../components/Botoes';
-import FooterComponent from '../../components/footer';
+const ExamScreen = () => {
+  const renderYearCard = ({ item }) => (
+    <View style={styles.card}>
+    
+      
+      <Text style={styles.yearText}>{item.year}</Text>
 
+      <View style={styles.iconsContainer}>
+        <Icon name="book" size={30} color="'#38B6FF'" />
+        <Icon name="calculate" size={30} color="'#38B6FF'" />
+        <Icon name="science" size={30} color="'#38B6FF'" />
+        <Icon name="language" size={30} color="'#38B6FF'" />
+      </View>
 
-const PaginaEnem = () => {
-  const [fontsLoaded, setFontsLoaded] = useState(false);
-  const [modalVisible, setModalVisible] = useState(false);
-  const [modalContent, setModalContent] = useState(null);
-
-  useEffect(() => {
-    async function loadFonts() {
-      await Font.loadAsync({
-        KollektifBold: KollektifBold,
-        Kollektif: Kollektif,
-      });
-      setFontsLoaded(true);
-    }
-
-    loadFonts();
-  }, []);
-
-  const openModal = (content) => {
-    setModalContent(content);
-    setModalVisible(true);
-  };
-
-  const closeModal = () => {
-    setModalVisible(false);
-    setModalContent(null);
-  };
+      {/* O botão "Ver Prova" também precisa ter um <Text> dentro */}
+      <TouchableOpacity style={styles.button}>
+        <Text style={styles.buttonText}>Ver Prova</Text>
+      </TouchableOpacity>
+    </View>
+  );
 
   return (
-    <ScrollView>
-    <View style={enemstyle.root}>
-      <Cabecalho />
-      <View style={enemstyle.espacopv}>
-      <View style={enemstyle.espacobt}>
-     
-         
-        </View>
-        <View>
-          <Text style={enemstyle.textStyle}>Vestibulares anteriores</Text>
-         
-            <View style={enemstyle.espacopv1}>
-              <View style={enemstyle.card}>
-                <Text style={enemstyle.textinho}>Prova 2012</Text>
-              
-                <Button title="Prova" onPress={() => openModal(<ModalContent1 />)} style={enemstyle.butaomodal} />
-              </View>
-              <View style={enemstyle.card}>
-                <Text style={enemstyle.textinho}>Prova 2013</Text>
-                <Text style={{fontFamily: 'Kollektif'}}>Clique no botão abaixo para acessar a prova</Text>
-                <Button title="Prova" onPress={() => openModal(<ModalContent2 />)} style={enemstyle.butaomodal} />
-              </View>
-              <View style={enemstyle.card}>
-                <Text style={enemstyle.textinho}>Prova 2014</Text>
-                <Text style={{fontFamily: 'Kollektif'}}>Clique no botão abaixo para acessar a prova</Text>
-                <Button title="Prova" onPress={() => openModal(<ModalContent3 />)} style={enemstyle.butaomodal} />
-              </View>
-              <View style={enemstyle.card}>
-                <Text style={enemstyle.textinho}>Prova 2015</Text>
-                <Text style={{fontFamily: 'Kollektif'}}>Clique no botão abaixo para acessar a prova</Text>
-                <Button title="Prova" onPress={() => openModal(<ModalContent4 />)} style={enemstyle.butaomodal} />
-              </View>
-              <View style={enemstyle.card}>
-                <Text style={enemstyle.textinho}>Prova 2016</Text>
-                <Text style={{fontFamily: 'Kollektif'}}>Clique no botão abaixo para acessar a prova</Text>
-                <Button title="Prova" onPress={() => openModal(<ModalContent5 />)} style={enemstyle.butaomodal} />
-              </View>
-              <View style={enemstyle.card}>
-                <Text style={enemstyle.textinho}>Prova 2017</Text>
-                <Text style={{fontFamily: 'Kollektif'}}>Clique no botão abaixo para acessar a prova</Text>
-                <Button title="Prova" onPress={() => openModal(<ModalContent6 />)} style={enemstyle.butaomodal} />
-              </View>
-              <View style={enemstyle.card}>
-                <Text style={enemstyle.textinho}>Prova 2018</Text>
-                <Text style={{fontFamily: 'Kollektif'}}>Clique no botão abaixo para acessar a prova</Text>
-                <Button title="Prova" onPress={() => openModal(<ModalContent7 />)} style={enemstyle.butaomodal} />
-              </View>
-              <View style={enemstyle.card}>
-                <Text style={enemstyle.textinho}>Prova 2019</Text>
-                <Text style={{fontFamily: 'Kollektif'}}>Clique no botão abaixo para acessar a prova</Text>
-                <Button title="Prova" onPress={() => openModal(<ModalContent8 />)} style={enemstyle.butaomodal} />
-              </View>
-              <View style={enemstyle.card}>
-                <Text style={enemstyle.textinho}>Prova 2020</Text>
-                <Text style={{fontFamily: 'Kollektif'}}>Clique no botão abaixo para acessar a prova</Text>
-                <Button title="Prova" onPress={() => openModal(<ModalContent9 />)} style={enemstyle.butaomodal} />
-              </View>
-              <View style={enemstyle.card}>
-                <Text style={enemstyle.textinho}>Prova 2021</Text>
-                <Text style={{fontFamily: 'Kollektif'}}>Clique no botão abaixo para acessar a prova</Text>
-                <Button title="Prova" onPress={() => openModal(<ModalContent10 />)} style={enemstyle.butaomodal} />
-              </View>
-              <View style={enemstyle.card}>
-                <Text style={enemstyle.textinho}>Prova 2022</Text>
-                <Text style={{fontFamily: 'Kollektif'}}>Clique no botão abaixo para acessar a prova</Text>
-                <Button title="Prova" onPress={() => openModal(<ModalContent11 />)} style={enemstyle.butaomodal} />
-              </View>
-              <View style={enemstyle.card}>
-                <Text style={enemstyle.textinho}>Prova 2023</Text>
-                <Text style={{fontFamily: 'Kollektif'}}>Clique no botão abaixo para acessar a prova</Text>
-                <Button title="Prova" onPress={() => openModal(<ModalContent12 />)} style={enemstyle.butaomodal} />
-              </View>
-             
-              <CustomModal visible={modalVisible} onClose={closeModal}>
-                {modalContent}
-              </CustomModal>
-            </View>
-          </View>
-       
+    <SafeAreaView style={styles.container}>
+      <View style={styles.header}>
+        <Text style={styles.title}>Provas Anteriores</Text>
+        <Icon name="filter-list" size={30} color="#FFF" style={styles.filterIcon} />
       </View>
-      <FooterComponent/>
-    </View>
-    </ScrollView>
+
+      {/* Caixa de busca precisa de <TextInput> */}
+      <TextInput 
+        style={styles.searchInput} 
+        placeholder="Buscar prova" 
+        placeholderTextColor="#AAA" 
+      />
+
+      <FlatList
+        data={years}
+        renderItem={renderYearCard}
+        keyExtractor={item => item.year}
+        contentContainerStyle={styles.list}
+      />
+
+      <TouchableOpacity style={styles.simuladoButton}>
+        {/* Botão de simulado com <Text> */}
+        <Text style={styles.simuladoButtonText}>Fazer Simulado</Text>
+      </TouchableOpacity>
+    </SafeAreaView>
   );
 };
 
-export default PaginaEnem;
+export default ExamScreen;

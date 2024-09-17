@@ -1,146 +1,80 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet } from 'react-native';
 
-export const enemstyle = StyleSheet.create({
-
-    root:{
-        flex:1,
-        height:'100%',
-        width:'100%',
-
-    },
-
-    espacobt:{
-        alignItems:'center',
-        justifyContent: 'center',
-        marginBottom: '8%'
- 
-    },
-    butao:{
-        borderRadius:5,
-        backgroundColor:'#38B6FF',
-        justifyContent:'center',
-        alignItems:'center',
-        margin:10,
-        width:'120%',
-        height:40
-       
-    },
-
-    text:{
-     
-      fontSize:30,
-      fontFamily: 'KollektifBold',
-      marginBottom:60,
-      
-    },
-
-    textinho:{
-      fontSize:19,
-      fontFamily: 'Kollektif',
-      
-    },
-
-    //modal//
-    centeredView: {
-        
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-       
-        backgroundColor: 'rgba(0, 0, 0, 0.7)', // Fundo semi-transparente escuro
-    
-      },
-      modalView: {
-        margin: 5,
-        backgroundColor: 'white',
-        borderRadius: 20,
-        padding: 20,
-        height:'100%',
-        width:'100%',
-        shadowColor: '#000',
-        shadowOffset: {
-          width: 0,
-          height: 2,
-        },
-        shadowOpacity: 0.25,
-        shadowRadius: 4,
-        elevation: 5,
-        justifyContent:'center',
-        alignItems:'center'
-
-      },
-      button: {
-        borderRadius: 5,
-        padding: 10,
-        elevation: 2,
-        marginTop:20,
-        backgroundColor: '#2196F3',
-        
-      },
-   
-      buttonClose: {
-        backgroundColor: '#38B6FF'
-
-      },
-      textStyle: {
-        color: 'black',
-        textAlign: 'center',
-        fontSize:25,
-        marginBottom:30,
-        fontFamily: 'KollektifBold',
-        
-      },
-
-      textStyle1: {
-        color: 'black',
-        fontSize:20,
-        textAlign: 'center',
-        fontFamily: 'Kollektif',
-      },
-      modalText: {
-        marginBottom: 15,
-       justifyContent:'center',
-       alignItems:'center',
-       flexDirection:'row',
-       width:'50%',
-       gap: 10
-      
-      },
-
-    espacopv:{
-        flexWrap:'wrap',
-        flexDirection:'row',
-        margin:15,
-        alignItems: 'center',
-        justifyContent: 'center',
-        
-    },
-    espacopv1:{
-      
-        flexDirection:'row',
-        alignItems: 'center',
-        justifyContent: 'center',
-  
-        backgroundColor:'#e0e1dd',
-        borderRadius:15,
-        flexWrap:'wrap',
-        marginBottom: 10
-
-
-
-    },
-
-    card:{
-      
-        margin:12,
-        backgroundColor:'#fff',
-        padding:3,
-        borderRadius:5,
-        justifyContent:'center',
-        alignItems:'center',
-        gap: 8
-        
-    },
-
- 
-})
+export const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#f5f5f5',
+  },
+  header: {
+    backgroundColor: '#38B6FF',
+    padding: 16,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  title: {
+    color: '#FFF',
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
+  filterIcon: {
+    marginRight: 8,
+  },
+  searchInput: {
+    backgroundColor: '#FFF',
+    borderRadius: 8,
+    padding: 10,
+    margin: 16,
+    borderColor: '#DDD',
+    borderWidth: 1,
+  },
+  list: {
+    paddingHorizontal: 16,
+  },
+  card: {
+    backgroundColor: '#FFF',
+    borderRadius: 8,
+    padding: 16,
+    marginBottom: 16,
+    elevation: 3, // sombra no Android
+    shadowColor: '#000', // sombra no iOS
+    shadowOpacity: 0.1,
+    shadowRadius: 10,
+    shadowOffset: { width: 0, height: 2 },
+  },
+  yearText: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 10,
+  },
+  iconsContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    marginBottom: 10,
+  },
+  button: {
+    backgroundColor: '#38B6FF',
+    borderRadius: 8,
+    paddingVertical: 10,
+    alignItems: 'center',
+  },
+  buttonText: {
+    color: '#FFF',
+    fontSize: 16,
+  },
+  simuladoButton: {
+    backgroundColor: '#FF6347',
+    padding: 15,
+    borderRadius: 50,
+    position: 'absolute',
+    bottom: 30,
+    right: 30,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  simuladoButtonText: {
+    color: '#FFF',
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+});

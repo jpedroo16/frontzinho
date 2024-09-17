@@ -11,17 +11,12 @@ export const styles = StyleSheet.create({
       alignItems: 'center',
       fontFamily: 'Kollektif',
       paddingBottom: 20,
-     
-      
-      
-  
     },
     container: {
       flex: 1,
       backgroundColor:"#38B6FF",
       alignItems: 'center',
       justifyContent: 'center',
-     
     },
 
     botao: {
@@ -32,14 +27,12 @@ export const styles = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'center',
       bottom: '10%'
-      
-     
-
     },
+
     cadastrar:{
       textDecorationLine: "underline",
       color: '#A2A3BB',   
-      bottom: 80
+      bottom: 60
     },
 
   texto: {
@@ -47,16 +40,12 @@ export const styles = StyleSheet.create({
     fontSize: 40,   
     textAlign: 'center',
     bottom: 100
-    
-    
   },
 
   Logo: {
     width: 400,
     height: 200,
     bottom: '14%'
-   
-  
   },
-
-  });
+  
+});

@@ -11,12 +11,16 @@ export const estilo = StyleSheet.create({
         color: 'black',
         fontFamily: 'KollektifBold',
         fontSize: 25,
+        width: 370,
+        
+       
 
       },
 
     espacopv1:{
         fontFamily: 'KollektifBold',
         textAlign:'left',
+      
         
       
     },

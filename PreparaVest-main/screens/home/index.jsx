@@ -1,35 +1,79 @@
-import { View,Text, TouchableOpacity, Image, ScrollView} from "react-native";
-import { paginapv } from'./style.jsx';
-import Cabecalho from "../../components/header/index.jsx";
-import FooterComponent from "../../components/footer/index.jsx";
-import { useNavigation } from '@react-navigation/native';
+import React from 'react';
+import { View, Text, TouchableOpacity, ScrollView, Image } from 'react-native';
+import Cabecalho from '../../components/header';
+import styles from './style'; // Importa os estilos
+import FooterComponent from '../../components/footer';
 
-export default function HomeScreen(){
+export default function HomePage() {
+  return (
+    <ScrollView style={styles.container}>
 
-    const navigation = useNavigation();
-    
-    return(
-        <ScrollView>
-        <View style={paginapv.root}>
-                <Cabecalho/>
-                
-                    <View style={paginapv.container}>
-                        <View  style={paginapv.sombrab}><Image source={require('../../assets/preparavestlogo.png')} style={paginapv.Banner} />
-                        </View>
-                        <Text style={paginapv.titulo}>PreparaVest</Text>
-                        <Text style={paginapv.texto}> Seu parceiro na jornada rumo ao sucesso nos vestibulares!
-                            Oferecemos suporte educacional personalizado para estudantes
-                            que buscam a aprovação nos exames vestibulares.
-                            Explore nossos recursos de estudo de alta qualidade 
-                            e comece sua jornada rumo ao sucesso acadêmico hoje mesmo!</Text>
-                        <Text style={{fontSize: 30, fontWeight: 'bold'}}> Por onde começar?!</Text>
-                        <TouchableOpacity style={paginapv.butao} onPress={()=> navigation.navigate("Pagina Enem")}>
-                            <Text style={paginapv.enemTexto}> ENEM</Text>
-                        </TouchableOpacity>
-                    </View>
-                <FooterComponent />
-            
+<Cabecalho/>
+      
+
+      {/* Seção de Introdução */}
+      <View style={styles.introSection}>
+        <Text style={styles.introTitle}>Bem-vindo ao Preparavest</Text>
+        <Text style={styles.introText}>
+          Encontre tudo o que você precisa para se preparar para o vestibular: conteúdos, provas anteriores e questões.
+        </Text>
+      </View>
+     
+        <Image
+          style={styles.logo}
+          source={require('../../assets/Professores/BannerPrincipal.jpeg')} // Logo da Preparavest
+        />
+        
+  
+
+      {/* Seção de Conteúdos */}
+      <View style={styles.contentSection}>
+        <Text style={styles.sectionTitle}>Nossos Conteúdos</Text>
+        <View style={styles.contentCardContainer}>
+          <TouchableOpacity style={styles.contentCard}>
+            <Text style={styles.cardTitle}>Conteúdos por Matéria</Text>
+            <Text style={styles.cardText}>Acesse resumos e dicas dos principais conteúdos cobrados em vestibulares.</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.contentCard}>
+            <Text style={styles.cardTitle}>Provas Anteriores</Text>
+            <Text style={styles.cardText}>Baixe e resolva provas anteriores de vestibulares renomados.</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.contentCard}>
+            <Text style={styles.cardTitle}>Banco de Questões</Text>
+            <Text style={styles.cardText}>Resolva questões de diferentes vestibulares e verifique seu desempenho.</Text>
+          </TouchableOpacity>
         </View>
-        </ScrollView>
-    );
+      </View>
+
+      {/* Seção de Estatísticas */}
+      <View style={styles.statsSection}>
+        <Text style={styles.sectionTitle}>Estatísticas do Vestibular</Text>
+        <View style={styles.statsCardContainer}>
+          <View style={styles.statsCard}>
+            <Text style={styles.statsNumber}>50%</Text>
+            <Text style={styles.statsText}>das questões de Matemática são relacionadas a Funções.</Text>
+          </View>
+          <View style={styles.statsCard}>
+            <Text style={styles.statsNumber}>30%</Text>
+            <Text style={styles.statsText}>das provas de Ciências Humanas abordam temas de Geopolítica.</Text>
+          </View>
+        </View>
+      </View>
+
+      {/* Seção de Dicas */}
+      <View style={styles.tipsSection}>
+        <Text style={styles.sectionTitle}>Dicas de Estudo</Text>
+        <View style={styles.tipCardContainer}>
+          <View style={styles.tipCard}>
+            <Text style={styles.tipText}>Crie um cronograma de estudos e dedique mais tempo às suas matérias de dificuldade.</Text>
+          </View>
+          <View style={styles.tipCard}>
+            <Text style={styles.tipText}>Resolva o máximo de questões de provas anteriores para se acostumar com o formato.</Text>
+          </View>
+        </View>
+      </View>
+
+  <FooterComponent/>
+    </ScrollView>
+  );
 }
