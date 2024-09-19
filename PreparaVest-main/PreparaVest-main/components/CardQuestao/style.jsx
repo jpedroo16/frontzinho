@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+{/*import { StyleSheet } from "react-native";
 
 export const card = StyleSheet.create({
     questoes: {
@@ -32,4 +32,4 @@ export const card = StyleSheet.create({
         justifyContent: 'center',
         borderRadius: 6
     }
-})
+}) */}

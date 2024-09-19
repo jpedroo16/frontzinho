@@ -98,7 +98,7 @@ export const style = StyleSheet.create({
 
   menu: {
     position: 'absolute',
-    top: 120, // Ajuste conforme a altura do cabeçalho para posicionar logo abaixo
+    top: 80, // Ajuste conforme a altura do cabeçalho para posicionar logo abaixo
     left:0,
     backgroundColor: '#fff',
     padding: 15,
@@ -114,7 +114,7 @@ export const style = StyleSheet.create({
   },
   menuOverlay: {
     flex: 1,
-    backgroundColor: "rgba(0, 0, 0, 0.5)", // Fundo semitransparente
+   
     justifyContent: "flex-start",
     alignItems: "flex-start",
   }

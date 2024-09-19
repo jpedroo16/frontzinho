@@ -2,26 +2,14 @@ import React from 'react';
 import { View, Text, TouchableOpacity, ScrollView, Image } from 'react-native';
 import Cabecalho from '../../components/header';
 import styles from './style'; // Importa os estilos
+import FooterComponent from '../../components/footer';
 
 export default function HomePage() {
   return (
     <ScrollView style={styles.container}>
 
 <Cabecalho/>
-      <View style={styles.header}>
-        <Image
-          style={styles.logo}
-          source={require('../../assets/Professores/BannerPrincipal.jpeg')} // Logo da Preparavest
-        />
-        <View style={styles.navMenu}>
-          <TouchableOpacity>
-            <Text style={styles.navItem}>Sobre</Text>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <Text style={styles.navItem}>Contato</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
+      
 
       {/* Seção de Introdução */}
       <View style={styles.introSection}>
@@ -30,6 +18,13 @@ export default function HomePage() {
           Encontre tudo o que você precisa para se preparar para o vestibular: conteúdos, provas anteriores e questões.
         </Text>
       </View>
+     
+        <Image
+          style={styles.logo}
+          source={require('../../assets/Professores/BannerPrincipal.jpeg')} // Logo da Preparavest
+        />
+        
+  
 
       {/* Seção de Conteúdos */}
       <View style={styles.contentSection}>
@@ -78,22 +73,7 @@ export default function HomePage() {
         </View>
       </View>
 
-      {/* Rodapé */}
-      <View style={styles.footer}>
-        <View style={styles.footerMenu}>
-          <TouchableOpacity>
-            <Text style={styles.footerLink}>Termos de Uso</Text>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <Text style={styles.footerLink}>Política de Privacidade</Text>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <Text style={styles.footerLink}>Contato</Text>
-          </TouchableOpacity>
-        </View>
-        <Text style={styles.footerText}>© 2024 Preparavest. Todos os direitos reservados.</Text>
-      </View>
-
+  <FooterComponent/>
     </ScrollView>
   );
 }

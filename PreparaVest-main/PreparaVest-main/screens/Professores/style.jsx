@@ -1,52 +1,46 @@
 import { StyleSheet } from "react-native";
 
-export const Prof = StyleSheet.create({
-  tituloProf: {
-    fontFamily: 'kollektifBold',
-    fontSize: 25,
-    margin: 80
-  },
-  viewtitulo: {
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  Materias: {
-    fontSize: 20,
-    fontFamily: 'KollektifBold',
-    textAlign: 'center'
-  },
-  professores: {
-    flexDirection: 'column',
-    shadowColor: '#171717',
-    shadowOffset: { width: -4, height: 8 },
-    shadowOpacity: 0.3,
-    shadowRadius: 15,
+export const styles = StyleSheet.create({
+  container: {
+    flex: 1,
     padding: 20,
-    borderRadius: 25,
-    justifyContent: 'center',
-    alignItems: 'center',
-    margin: 5
+    backgroundColor: "#f0f0f0",
   },
-  espacomat: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    gap: 25,
-    width: '100%'
+  statsSection: {
+    margin: 30,
   },
-  Perfil: {
-    borderRadius: 100,
+  sectionTitle: {
+    fontSize: 24,
+    fontWeight: "bold",
+    marginBottom: 20,
+    color: "#333",
+    textAlign: "center",
   },
-  biografia: {
-    width: 200,
-    marginLeft: 27,
-    fontFamily: 'Kollektif',
-    textAlign: 'center',
+  statsCardContainer: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "space-between",
   },
-  textosMaterias: {
-    fontSize: 20,
-    fontFamily: 'KollektifBold',
-    marginTop: 30,
-    marginLeft: 50,
-    width: 200,
+  statsCard: {
+    backgroundColor: "#fff",
+    borderRadius: 10,
+    padding: 15,
+    marginBottom: 15,
+    width: "48%",
+    elevation: 3, // Sombra para Android
+    shadowColor: "#000", // Sombra para iOS
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+  },
+  statsNumber: {
+    fontSize: 28,
+    fontWeight: "bold",
+    color: "#007bff",
+  },
+  statsText: {
+    fontSize: 16,
+    color: "#555",
+    marginTop: 5,
   },
 });

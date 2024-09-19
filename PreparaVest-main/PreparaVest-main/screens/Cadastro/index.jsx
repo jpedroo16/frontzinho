@@ -48,7 +48,7 @@ export default function Cadastro() {
             } 
             catch (error) {
                 console.error(error);
-                Alert.alert('Erro', 'Erro ao tentar cadastrar.');
+                Alert.alert('Erro', 'Email já cadastrado.');
             }
         } else {
             Alert.alert('Erro', 'Por favor, preencha os campos corretamente.');

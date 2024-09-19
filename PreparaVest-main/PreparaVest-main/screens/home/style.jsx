@@ -6,26 +6,15 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   header: {
-    backgroundColor: '#1E90FF',
+   
     padding: 20,
     alignItems: 'center',
   },
   logo: {
-    width: '80%', // Logo ocupa 80% da largura da tela
-    height: undefined,
-    aspectRatio: 2.5, // Proporção da imagem para manter o formato
-    resizeMode: 'contain', // Mantém a proporção da imagem
-    marginBottom: 10,
+    width:399,
+    height: 160
   },
-  navMenu: {
-    flexDirection: 'row',
-    marginTop: 10,
-  },
-  navItem: {
-    color: '#fff',
-    fontSize: 16,
-    marginHorizontal: 10,
-  },
+  
   introSection: {
     padding: 20,
     backgroundColor: '#F0F0F0',
@@ -56,16 +45,20 @@ const styles = StyleSheet.create({
   contentCardContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    alignItems: 'center',
+    justifyContent: "center",
     flexWrap: 'wrap',
   },
   contentCard: {
     backgroundColor: '#F9F9F9',
-    width: '30%',
+    width: '80%',
     padding: 15,
     borderRadius: 10,
     elevation: 5,
-    marginBottom: 10,
+    marginBottom: 20,
     alignItems: 'center',
+    justifyContent: "center"
+  
   },
   cardTitle: {
     fontSize: 18,
@@ -80,7 +73,8 @@ const styles = StyleSheet.create({
   },
   statsSection: {
     padding: 20,
-    backgroundColor: '#F0F0F0',
+    backgroundColor:"#38B6FF",
+    
   },
   statsCardContainer: {
     flexDirection: 'row',
@@ -126,24 +120,7 @@ const styles = StyleSheet.create({
     color: '#555',
     textAlign: 'center',
   },
-  footer: {
-    backgroundColor: '#1E90FF',
-    padding: 20,
-    alignItems: 'center',
-  },
-  footerMenu: {
-    flexDirection: 'row',
-    marginBottom: 10,
-  },
-  footerLink: {
-    color: '#fff',
-    fontSize: 14,
-    marginHorizontal: 10,
-  },
-  footerText: {
-    color: '#fff',
-    fontSize: 14,
-  },
+  
 });
 
 export default styles;

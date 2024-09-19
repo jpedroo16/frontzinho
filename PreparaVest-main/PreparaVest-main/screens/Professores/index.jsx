@@ -1,80 +1,98 @@
-import { View, Text, Pressable, Image, ScrollView } from "react-native";
-import { Prof } from "./style";
-import Cabecalho from "../../components/header";
-import FooterComponent from "../../components/footer";
-import { Botoes } from "../../components/Botoes";
+import React from 'react';
+import { View, Text, ScrollView } from 'react-native';
+ import {styles} from './style'
 import { useNavigation } from '@react-navigation/native';
-import { Linking } from 'react-native';
+import Cabecalho from '../../components/header';
+import FooterComponent from '../../components/footer';
 
-export function Professores() {
+ export default function EstatisticasENEM(){
+
   const navigation = useNavigation();
 
   return (
-    <ScrollView>
-      <View style={Prof.root}>
-        <Cabecalho />
-        <View style={{ flexDirection: 'row' }}>
-          <Botoes />
-          <View style={{ flexDirection: 'column' }}>
-            <View style={Prof.viewtitulo}>
-              <Text style={Prof.tituloProf}>Professores Indicados</Text>
-            </View>
+    <ScrollView >
+               <Cabecalho/>
 
-            <View style={Prof.container}>
-              {/* Matemática */}
-              <View style={Prof.bloco}>
-                <Text style={Prof.Materias}>Matemática</Text>
-                <View style={Prof.espacomat}>
-                  <View style={Prof.professores}>
-                    <Image
-                      style={Prof.Perfil}
-                      source={require('../../assets/Professores/FerrettoProfile.jpg')}
-                    />
-                    <View>
-                      <Text style={Prof.textosMaterias}>Professor Ferretto</Text>
-                      <Pressable onPress={() => Linking.openURL('https://www.youtube.com/@professorferretto')}>
-                        <Text style={Prof.textosMaterias}>Canal Youtube</Text>
-                        <Text style={Prof.biografia}>
-                          Somos a melhor comunidade de professores da internet, com o melhor preço do Brasil e com a missão de fazer você conquistar a sua aprovação no ENEM e Vestibulares de todo o Brasil!
-                        </Text>
-                      </Pressable>
-                    </View>
-                  </View>
+      <View style={styles.statsSection}>
+        <Text style={styles.sectionTitle}>Estatísticas do ENEM</Text>
+        <View style={styles.statsCardContainer}>
+          {/* Estatísticas do ENEM */}
+          <View style={styles.statsCard}>
+            <Text style={styles.statsNumber}>50%</Text>
+            <Text style={styles.statsText}>das questões de Matemática são relacionadas a Funções.</Text>
+          </View>
+          <View style={styles.statsCard}>
+            <Text style={styles.statsNumber}>30%</Text>
+            <Text style={styles.statsText}>das provas de Ciências Humanas abordam temas de Geopolítica.</Text>
+          </View>
+          <View style={styles.statsCard}>
+            <Text style={styles.statsNumber}>20%</Text>
+            <Text style={styles.statsText}>das questões de Ciências da Natureza envolvem Química Orgânica.</Text>
+          </View>
+          <View style={styles.statsCard}>
+            <Text style={styles.statsNumber}>40%</Text>
+            <Text style={styles.statsText}>das questões de Linguagens e Códigos são sobre Interpretação de Textos.</Text>
+          </View>
 
-                  {/* Outros professores de Matemática */}
-                  {/* Repetir o bloco acima para outros professores de Matemática */}
-                </View>
+          {/* Estatísticas da FUVEST */}
+          <Text style={styles.sectionTitle}>Estatísticas da FUVEST</Text>
 
-                {/* Física */}
-                <Text style={Prof.Materias}>Física</Text>
-                <View style={Prof.espacomat}>
-                  <View style={Prof.professores}>
-                    <Image
-                      style={Prof.Perfil}
-                      source={require('../../assets/Professores/PedroProfile.jpg')}
-                    />
-                    <View>
-                      <Text style={Prof.textosMaterias}>Ciência Todo Dia</Text>
-                      <Pressable onPress={() => Linking.openURL('https://www.youtube.com/@CienciaTodoDia')}>
-                        <Text style={Prof.textosMaterias}>Canal Youtube</Text>
-                        <Text style={Prof.biografia}>
-                          Um canal totalmente voltado para assuntos que podem ser abordados no cotidiano, mantendo seu cérebro sempre ativo!
-                        </Text>
-                      </Pressable>
-                    </View>
-                  </View>
+          <View style={styles.statsCard}>
+            <Text style={styles.statsNumber}>35%</Text>
+            <Text style={styles.statsText}>das questões da FUVEST são sobre Matemática.</Text>
+          </View>
+          <View style={styles.statsCard}>
+            <Text style={styles.statsNumber}>20%</Text>
+            <Text style={styles.statsText}>das questões de Física na FUVEST envolvem Eletricidade.</Text>
+          </View>
+          <View style={styles.statsCard}>
+            <Text style={styles.statsNumber}>25%</Text>
+            <Text style={styles.statsText}>das questões de Ciências Humanas na FUVEST focam em História do Brasil.</Text>
+          </View>
 
-                  {/* Outros professores de Física */}
-                  {/* Repetir o bloco acima para outros professores de Física */}
-                </View>
+          {/* Estatísticas da UNESP */}
+          <Text style={styles.sectionTitle}>Estatísticas da UNESP</Text>
 
-                {/* Continuar com os outros professores para Química, Biologia, Português, Geografia, etc */}
-              </View>
-            </View>
+          <View style={styles.statsCard}>
+            <Text style={styles.statsNumber}>15%</Text>
+            <Text style={styles.statsText}>das provas da UNESP são sobre Filosofia e Sociologia.</Text>
+          </View>
+          <View style={styles.statsCard}>
+            <Text style={styles.statsNumber}>30%</Text>
+            <Text style={styles.statsText}>das questões de Química na UNESP são sobre Química Geral.</Text>
+          </View>
+          <View style={styles.statsCard}>
+            <Text style={styles.statsNumber}>35%</Text>
+            <Text style={styles.statsText}>das questões de Biologia na UNESP são sobre Genética.</Text>
+          </View>
+
+          {/* Estatísticas da UNICAMP */}
+          <Text style={styles.sectionTitle}>Estatísticas da UNICAMP</Text>
+
+          <View style={styles.statsCard}>
+            <Text style={styles.statsNumber}>40%</Text>
+            <Text style={styles.statsText}>das questões de Linguagens na UNICAMP focam em Literatura Brasileira.</Text>
+          </View>
+          <View style={styles.statsCard}>
+            <Text style={styles.statsNumber}>25%</Text>
+            <Text style={styles.statsText}>das questões de Física na UNICAMP são sobre Mecânica.</Text>
+          </View>
+          <View style={styles.statsCard}>
+            <Text style={styles.statsNumber}>20%</Text>
+            <Text style={styles.statsText}>das questões de Matemática na UNICAMP envolvem Geometria Analítica.</Text>
           </View>
         </View>
-      </View>
-      <FooterComponent />
+
+       
+
+        </View>
+          
+    <FooterComponent/>
+
+      
     </ScrollView>
   );
-}
+};
+
+
+
